@@ -13,13 +13,12 @@ interface Props {
 
 const Song = ({ item, itemIndex }: Props) => {
   const spotifyApi = useSpotify()
-  const { songContextState: {deviceId}, dispatch} = useSongContext()
+  const { songContextState: {deviceId}, dispatchSongContext} = useSongContext()
   const { playListContextState: {selectedPlaylist} } = usePlaylistContext()
 
   const handlePlaySong = async () => {
-    console.log('okok')
     if(!deviceId) return
-    dispatch({
+    dispatchSongContext({
         type: SongReducerActionType.SetCurrentPlayingSong,
         payload: {
             selectedSong: item.track,
