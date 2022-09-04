@@ -15,7 +15,7 @@ const Home: NextPage = () => {
           <Head>
             <title>Spotify</title>
             <meta name="description" content='Spotify by Henry Web Dev' />
-            <link ref='icon' href="/favicon.ico" />
+            <link ref={`icon`} href='/favicon.ico' />
           </Head>
           <main className='flex'>
             <SideBar />
